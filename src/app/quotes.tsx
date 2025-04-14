@@ -32,7 +32,7 @@ export function Quotes() {
 
   const spread = searchParams.get("spread")
     ? parseFloat(searchParams.get("spread") as string)
-    : null;
+    : 1.02;
 
   useEffect(() => {
     console.log("Spread:", spread);

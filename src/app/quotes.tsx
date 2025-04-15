@@ -93,7 +93,7 @@ export function Quotes() {
           <div className="p-4 bg-stone-300 text-secondary-foreground dark:text-primary-foreground rounded-xl font-bold">
             {!!usdt && !!spread ? (
               <p>
-                USD SPOT: R${" "}
+                USD PREÇO: R${" "}
                 {(
                   usdt?.[usdt.currentValidLink].usdtSpot *
                   usdt?.[usdt.currentValidLink].usdt *

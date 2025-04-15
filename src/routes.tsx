@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
     errorElement: <div>Ops! Algo deu errado.</div>,
   },
   {
-    path: "/operator",
+    path: "/operador-404",
     element: <Operator />,
     errorElement: <div>Ops! Algo deu errado.</div>,
   },

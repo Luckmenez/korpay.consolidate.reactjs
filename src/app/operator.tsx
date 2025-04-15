@@ -53,11 +53,11 @@ export function Operator() {
   const { theme, setTheme } = useTheme();
   const spreads = [
     1.02, 1.015, 1.01, 1.009, 1.0085, 1.008, 1.0075, 1.0072, 1.007, 1.0066,
-    1.0066, 1.0065, 1.0063, 1.006, 1.0058, 1.0053, 1.005, 1.0048, 1.0045,
+    1.0065, 1.0063, 1.006, 1.0058, 1.0053, 1.005, 1.0048, 1.0045,
   ];
 
   useEffect(() => {
-    const socket = io("http://localhost:3333", {
+    const socket = io(import.meta.env.VITE_SOCKET_URL, {
       transports: ["websocket"],
     });
 
@@ -160,11 +160,14 @@ export function Operator() {
               {spreads.map((spread) => (
                 <TableRow
                   key={spread}
-                  className="bg-background hover:bg-black/20"
+                  className="bg-background hover:bg-black/20 cursor-pointer"
                   onClick={() => {
                     navigator.clipboard.writeText(
-                      `http://localhost:5173/?spread=${spread}`
+                      `${import.meta.env.VITE_WEBSITE_URL}/?spread=${spread}`
                     );
+                    toast.success(`Link com o spread ${spread} copiado.`, {
+                      position: "top-right",
+                    });
                   }}
                 >
                   <TableCell className="text-center text-secondary-foreground">
